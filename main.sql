@@ -67,6 +67,19 @@ CREATE TABLE "Passenger" (
   PRIMARY KEY ("Passenger_id", "Reservation_id")
 );
 
+/* Amenities table gives different combinations of amenities available in the buses. 1 indicates enabled, 0 indicated disabled*/
+
+INSERT INTO Amenities(“Amenities_id”, Meals, WiFi, Bathroom)
+VALUES (1,1,1,0);
+INSERT INTO Amenities(“Amenities_id”, “Meals”, “WiFi”, “Bathroom”)
+VALUES (2,1,0,1);
+INSERT INTO Amenities(“Amenities_id”, “Meals”, “WiFi”, “Bathroom”)
+VALUES (3,0,1,1);
+INSERT INTO Amenities(“Amenities_id”, “Meals”, “WiFi”, “Bathroom”)
+VALUES (4,0,1,0);
+INSERT INTO Amenities(“Amenities_id”, “Meals”, “WiFi”, “Bathroom”)
+VALUES (5,1,1,1);
+
 /* Transaction table keeps a log of all transactions(payments) attemted in the system*/
 INSERT INTO Transaction("Transaction_id", "Status")
 VALUES (1,’success’);
