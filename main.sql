@@ -98,7 +98,25 @@ INSERT INTO public."Bus "("Bus_id", "Start_City", "Destination_City", "Fare", "A
   INSERT INTO public."Bus "(
 	"Bus_id", "Start_City", "Destination_City", "Fare", "Amenities_id")
 	VALUES(555,'New York','Connecticut',2225, 5);
-  
+
+/* Passenger table contains details about the passengers using the bus reservation system*/
+INSERT INTO public."Passenger"(
+	"Passenger_id", "First_Name", "Last_Name", "Gender", "Email", "Cell_Number", "Reservation_id")
+	VALUES (1,'Maka','Makh','female','uservns1111@gmail.com','7376319132', 505);
+INSERT INTO public."Passenger"(
+	"Passenger_id", "First_Name", "Last_Name", "Gender", "Email", "Cell_Number", "Reservation_id")
+	VALUES  (2,'Ilan','Zlot','male','user@gmail.com','7376349112', 404);
+INSERT INTO public."Passenger"(
+	"Passenger_id", "First_Name", "Last_Name", "Gender", "Email", "Cell_Number", "Reservation_id")
+	VALUES  (3,'Artem','Gur','male','anuruser@gmail.com','7376359132', 303);
+INSERT INTO public."Passenger"(
+	"Passenger_id", "First_Name", "Last_Name", "Gender", "Email", "Cell_Number", "Reservation_id")
+	VALUES  (4,'Laura','Auk','female','userns1111@gmail.com','7376319132', 202);
+INSERT INTO public."Passenger"(
+	"Passenger_id", "First_Name", "Last_Name", "Gender", "Email", "Cell_Number", "Reservation_id")
+	VALUES  (5,'Evelina','Chuma','female','useragvns1111@gmail.com','7876349132', 101);
+
+
 /* Transaction table keeps a log of all transactions(payments) attemted in the system*/
 INSERT INTO Transaction("Transaction_id", "Status")
 VALUES (1,’success’);
