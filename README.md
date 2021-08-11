@@ -1,6 +1,7 @@
 # MET-CS-669-Group-Project
 
 OBJECTIVE
+
 Create a relational database for Bus reservations.
 
 CONTENTS
