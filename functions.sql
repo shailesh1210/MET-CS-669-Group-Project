@@ -19,3 +19,27 @@ as $$
 		WHERE Passenger.Passenger_id=passengerID AND Reservation.Reservation_id=ReservationID;
 	END;
 $$
+
+
+/* The following trigger function shall run before any attempted insert on the reservations table. If the transaction status is marked as 'fail' an exception is 
+raised and insert does not happen in the Reservation table. This means that only successful transactions get inserted into Reservation.*/
+
+CREATE FUNCTION check_insert_reservations() RETURNS trigger
+LANGUAGE plpgsql
+AS $$
+DECLARE 
+status VARCHAR (32);
+BEGIN
+      SELECT Status FROM Transaction
+	  INTO status
+	   WHERE Transaction_id=new.Transaction_id;
+    IF status='fail' THEN
+        RAISE EXCEPTION 'Transaction Failure';
+    END IF;
+    RETURN NEW;
+END;
+$$;
+CREATE TRIGGER check_insert_reservations BEFORE INSERT OR UPDATE ON  public."Reservation"
+    FOR EACH ROW EXECUTE PROCEDURE check_insert_reservations();
+    
+    
