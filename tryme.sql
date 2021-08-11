@@ -7,7 +7,7 @@ INSERT INTO public."Reservation"(
   --The above statement throws an exception because the transaction_id 27 corrresponds to a failed transaction.
   --The trigger prevents its insert into the Reservation table.
   
-  Get_BookingDetails(3,303)
+  Get_BookingDetails(3,303);
   
   --The above statement fetchesreservation details corresponding to passenger id 3 and reservation id 303
   
