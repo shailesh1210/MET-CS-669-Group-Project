@@ -1,3 +1,7 @@
+/*Bus reservation system Posgresql
+7Tables 
+*/
+
 CREATE TABLE "Schedule" (
   "Schedule_id" DECIMAL (12),
   "Arrival_date_time" DATE,
