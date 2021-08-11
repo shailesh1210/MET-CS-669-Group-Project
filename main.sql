@@ -80,6 +80,25 @@ VALUES (4,0,1,0);
 INSERT INTO Amenities(“Amenities_id”, “Meals”, “WiFi”, “Bathroom”)
 VALUES (5,1,1,1);
 
+/* Bus table gives details of the buses whose reservations are managed by the DBMS*/
+INSERT INTO public."Bus "("Bus_id", "Start_City", "Destination_City", "Fare", "Amenities_id")
+	VALUES (111,'New York','Boston',1245, 1);
+  
+INSERT INTO public."Bus "("Bus_id", "Start_City", "Destination_City", "Fare", "Amenities_id")
+	VALUES(222,'New York','Washington',1125, 2);
+  
+  INSERT INTO public."Bus "(
+	"Bus_id", "Start_City", "Destination_City", "Fare", "Amenities_id")
+	VALUES (333,'New York','Hamptons',1555, 3);
+  
+  INSERT INTO public."Bus "(
+	"Bus_id", "Start_City", "Destination_City", "Fare", "Amenities_id")
+	VALUES(444,'New York','New Jersey',2225, 4);
+  
+  INSERT INTO public."Bus "(
+	"Bus_id", "Start_City", "Destination_City", "Fare", "Amenities_id")
+	VALUES(555,'New York','Connecticut',2225, 5);
+  
 /* Transaction table keeps a log of all transactions(payments) attemted in the system*/
 INSERT INTO Transaction("Transaction_id", "Status")
 VALUES (1,’success’);
