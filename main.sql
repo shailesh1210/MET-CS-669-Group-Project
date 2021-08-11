@@ -148,3 +148,7 @@ VALUES (28,’success’);
   INSERT INTO public."Reservation"(
 	"Reservation_id", "Seat_Num", "Date_booked", "Transaction_id", "Bus_id")
 	VALUES  (505, 2020,'2021-06-17', 24 , 111);
+	
+/*Schedule table consists of the schedule of each bus*/
+
+
