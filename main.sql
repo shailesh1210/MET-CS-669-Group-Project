@@ -119,14 +119,32 @@ INSERT INTO public."Passenger"(
 
 /* Transaction table keeps a log of all transactions(payments) attemted in the system*/
 INSERT INTO Transaction("Transaction_id", "Status")
-VALUES (1,’success’);
+VALUES (24,’success’);
 INSERT INTO Transaction("Transaction_id", "Status")
-VALUES (2,’success’);
+VALUES (25,’success’);
 INSERT INTO Transaction("Transaction_id", "Status")
-VALUES (3,’fail’);
+VALUES (26,’success’);
 INSERT INTO Transaction("Transaction_id", "Status")
-VALUES (4,’fail’);
+VALUES (27,’fail’);
 INSERT INTO Transaction("Transaction_id", "Status")
-VALUES (5,’success’);
+VALUES (28,’success’);
 
 /*Before INSERT into Reservation table, a trigger goes off. This trigger raises an exception if the transaction is marked as Fail. */
+/*The code for trigger is present in functions.sql*/
+
+
+ INSERT INTO public."Reservation"(
+	"Reservation_id", "Seat_Num", "Date_booked", "Transaction_id", "Bus_id")
+	VALUES (101, 2020,'2021-06-13', 28 , 555);
+ INSERT INTO public."Reservation"(
+	"Reservation_id", "Seat_Num", "Date_booked", "Transaction_id", "Bus_id")
+	VALUES  (202, 2020,'2021-06-14', 27 , 444);
+ INSERT INTO public."Reservation"(
+	"Reservation_id", "Seat_Num", "Date_booked", "Transaction_id", "Bus_id")
+	VALUES  (303, 2020,'2021-06-15', 26 , 333);
+ INSERT INTO public."Reservation"(
+	"Reservation_id", "Seat_Num", "Date_booked", "Transaction_id", "Bus_id")
+	VALUES  (404, 2020,'2021-06-16', 25 , 222);
+  INSERT INTO public."Reservation"(
+	"Reservation_id", "Seat_Num", "Date_booked", "Transaction_id", "Bus_id")
+	VALUES  (505, 2020,'2021-06-17', 24 , 111);
