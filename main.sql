@@ -66,3 +66,17 @@ CREATE TABLE "Passenger" (
   "Reservation_id" DECIMAL (12),
   PRIMARY KEY ("Passenger_id", "Reservation_id")
 );
+
+/* Transaction table keeps a log of all transactions(payments) attemted in the system*/
+INSERT INTO Transaction("Transaction_id", "Status")
+VALUES (1,’success’);
+INSERT INTO Transaction("Transaction_id", "Status")
+VALUES (2,’success’);
+INSERT INTO Transaction("Transaction_id", "Status")
+VALUES (3,’fail’);
+INSERT INTO Transaction("Transaction_id", "Status")
+VALUES (4,’fail’);
+INSERT INTO Transaction("Transaction_id", "Status")
+VALUES (5,’success’);
+
+/*Before INSERT into Reservation table, a trigger goes off. This trigger raises an exception if the transaction is marked as Fail. */
